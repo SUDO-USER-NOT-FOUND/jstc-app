@@ -14,7 +14,7 @@ pipeline {
         sh 'docker build -t assertfinder-scanner:latest .'
         sh 'docker pull aquasec/trivy'
       }
-
+    }
     stage('Scan') {
       steps {
         sh 'docker run aquasec/trivy image assertfinder-scanner:latest'
