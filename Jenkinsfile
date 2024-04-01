@@ -17,7 +17,7 @@ pipeline {
     }
     stage('Scan') {
       steps {
-        sh 'docker run aquasec/trivy image assertfinder-scanner:latest'
+        sh 'docker run -v /var/run/docker.sock:/var/run/docker.sock aquasec/trivy image assertfinder-scanner:latest'
       }
     }
   }
